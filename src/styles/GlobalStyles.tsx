@@ -30,5 +30,6 @@ body {
   color: #ffffff;
   font-weight: 400;
   font-style: normal;
+  background-color: #0b0b0a;
 }
 `
