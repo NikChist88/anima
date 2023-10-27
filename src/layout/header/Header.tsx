@@ -30,7 +30,9 @@ export const Header = () => {
             <Icon iconId="phone" width="20px" height="20px" />
             +7 (499) 258-625-33
           </HeaderLink>
-          <Icon iconId="search" width="20px" height="20px" />
+          <HeaderLink href="#">
+            <Icon iconId="search" width="20px" height="20px" />
+          </HeaderLink>
           <Burger $isOpen={isOpenMenu} onClick={toggleMenu}>
             <span></span>
           </Burger>
