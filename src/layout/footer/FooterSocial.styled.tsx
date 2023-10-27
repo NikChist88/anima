@@ -19,6 +19,11 @@ export const FooterSocialItem = styled.li`
   &:hover > a {
     color: #28553f;
   }
+
+  @media screen and (max-width: 576px) {
+    width: 40px;
+    height: 40px;
+  }
 `
 
 export const FooterSocialLink = styled.a`

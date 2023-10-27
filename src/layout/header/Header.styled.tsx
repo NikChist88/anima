@@ -33,7 +33,7 @@ export const HeaderLink = styled.a<{ $phone?: boolean }>`
   transition: color ease-in 0.3s;
 
   &:hover {
-    color: #28553f;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   ${({ $phone }) =>
