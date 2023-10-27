@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Container } from '../../components/styled/Container.styled'
 import Flex from 'styled-flex-component'
 import { StyledHeader, HeaderLink } from './Header.styled'
@@ -9,8 +10,15 @@ import {
 } from './headerMenu/HeaderMenu.styled'
 import { Logo } from '../../components/Logo'
 import { Icon } from '../../components/Icon'
+import { Burger } from '../../components/styled/Burger.styled'
 
 export const Header = () => {
+  const [isOpenMenu, setOpenMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setOpenMenu(!isOpenMenu)
+  }
+
   return (
     <StyledHeader>
       <Container>
@@ -23,7 +31,9 @@ export const Header = () => {
             +7 (499) 258-625-33
           </HeaderLink>
           <Icon iconId="search" width="20px" height="20px" />
-          <Icon $burger iconId="burger" width="25px" height="20px" />
+          <Burger $isOpen={isOpenMenu} onClick={toggleMenu}>
+            <span></span>
+          </Burger>
         </Flex>
         <Flex justifyBetween>
           <Logo />
