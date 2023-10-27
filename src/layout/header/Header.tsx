@@ -10,7 +10,7 @@ import {
 } from './headerMenu/HeaderMenu.styled'
 import { Logo } from '../../components/Logo'
 import { Icon } from '../../components/Icon'
-import { Burger } from '../../components/styled/Burger.styled'
+import { BurgerButton } from '../../components/styled/BurgerButton.styled'
 
 export const Header = () => {
   const [isOpenMenu, setOpenMenu] = useState(false)
@@ -20,7 +20,7 @@ export const Header = () => {
   }
 
   return (
-    <StyledHeader>
+    <StyledHeader id='header'>
       <Container>
         <Flex justifyEnd alignCenter>
           <HeaderLink href="#">
@@ -33,9 +33,9 @@ export const Header = () => {
           <HeaderLink href="#">
             <Icon iconId="search" width="20px" height="20px" />
           </HeaderLink>
-          <Burger $isOpen={isOpenMenu} onClick={toggleMenu}>
+          <BurgerButton $isOpen={isOpenMenu} onClick={toggleMenu}>
             <span></span>
-          </Burger>
+          </BurgerButton>
         </Flex>
         <Flex justifyBetween>
           <Logo />

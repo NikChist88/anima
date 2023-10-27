@@ -6,7 +6,7 @@ export const FeedbackForm = styled.form`
     gap: 0 20px;
     margin-bottom: 20px;
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 576px) { 
       display: flex;
       flex-direction: column;
       align-items: center;

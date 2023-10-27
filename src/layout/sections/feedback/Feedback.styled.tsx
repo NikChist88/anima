@@ -9,12 +9,19 @@ export const StyledFeedback = styled.section`
       90deg,
       rgba(0, 0, 0, 0.93) 40.01%,
       rgba(0, 0, 0, 0.7) 66.12%,
-      rgba(255, 255, 255, 0) 87.98%
+      rgba(255, 255, 255, 0) 87%
     ),
     url(${image}) no-repeat center / cover;
 
   @media screen and (max-width: 576px) {
     padding: 35px 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.93) 40.01%,
+      rgba(0, 0, 0, 0.7) 66.12%,
+      rgba(255, 255, 255, 0) 140%
+    ),
+    url(${image}) no-repeat center / cover;
   }
 
   ${Button} {
