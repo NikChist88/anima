@@ -1,102 +1,41 @@
-import styled from 'styled-components'
-import { Container } from '../../components/styled/Container.styled'
+import { Container } from '../../components/styled/Container'
 import { Logo } from '../../components/Logo'
-import { StyledFooter, FooterBody, FooterAddress } from './Footer.styled'
-import {
-  FooterMenu,
-  FooterMenuTitle,
-  FooterMenuList,
-  FooterMenuItem,
-  FooterMenuLink,
-} from './footerMenu/FooterMenu.styled'
-import {
-  FooterSocial,
-  FooterSocialItem,
-  FooterSocialLink,
-} from './FooterSocial.styled'
-import { Icon } from '../../components/Icon'
+import { S } from './Footer_Styles'
+import { footerMenuItems } from '../../data/data'
+import { Socials } from '../../components/socials/Socials'
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
-    <StyledFooter>
+    <S.Footer>
       <Container>
-        <FooterBody>
+        <S.FooterBody>
           <Logo />
-          <FooterMenu>
-            <FooterMenuList>
-              <FooterMenuTitle>Меню</FooterMenuTitle>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">Delivery & returns</FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">FAQ</FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">Contacts</FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">Blog</FooterMenuLink>
-              </FooterMenuItem>
-            </FooterMenuList>
-            <FooterMenuList>
-              <FooterMenuTitle>Каталог</FooterMenuTitle>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">New arrivals</FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">Trending now</FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">Brands</FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="#">Sales</FooterMenuLink>
-              </FooterMenuItem>
-            </FooterMenuList>
-            <FooterMenuList>
-              <FooterMenuTitle>Контакты для связи</FooterMenuTitle>
-              <FooterMenuItem>
-                <FooterMenuLink href="tel:4055550128">
-                  <span>Телефон:</span> (405) 555-0128
-                </FooterMenuLink>
-              </FooterMenuItem>
-              <FooterMenuItem>
-                <FooterMenuLink href="mailto:hello@createx.com">
-                  <span>Почта:</span> hello@createx.com
-                </FooterMenuLink>
-              </FooterMenuItem>
-              <FooterSocial>
-                <FooterSocialItem>
-                  <FooterSocialLink href="#">
-                    <Icon iconId="fb" width="16px" height="16px" />
-                  </FooterSocialLink>
-                </FooterSocialItem>
-                <FooterSocialItem>
-                  <FooterSocialLink href="#">
-                    <Icon iconId="inst" width="16px" height="16px" />
-                  </FooterSocialLink>
-                </FooterSocialItem>
-                <FooterSocialItem>
-                  <FooterSocialLink href="#">
-                    <Icon iconId="tel" width="16px" height="16px" />
-                  </FooterSocialLink>
-                </FooterSocialItem>
-                <FooterSocialItem>
-                  <FooterSocialLink href="#">
-                    <Icon iconId="yout" width="16px" height="16px" />
-                  </FooterSocialLink>
-                </FooterSocialItem>
-                <FooterSocialItem>
-                  <FooterSocialLink href="#">
-                    <Icon iconId="pint" width="16px" height="16px" />
-                  </FooterSocialLink>
-                </FooterSocialItem>
-              </FooterSocial>
-            </FooterMenuList>
-          </FooterMenu>
-        </FooterBody>
+          <S.FooterMenu>
+            {footerMenuItems.map((item, index) => {
+              return (
+                <S.FooterMenuBody key={item.id}>
+                  <S.FooterMenuTitle>{item.title}</S.FooterMenuTitle>
+                  <S.FooterMenuList>
+                    {item.links.map((link) => {
+                      return (
+                        <S.FooterMenuItem key={link.id}>
+                          <S.FooterMenuLink href={link.href}>
+                            {link.title}
+                          </S.FooterMenuLink>
+                        </S.FooterMenuItem>
+                      )
+                    })}
+                    {index === 2 && <Socials />}
+                  </S.FooterMenuList>
+                </S.FooterMenuBody>
+              )
+            })}
+          </S.FooterMenu>
+        </S.FooterBody>
       </Container>
-      <FooterAddress>674 Gonzales Drive. Washington, PA 15301</FooterAddress>
-    </StyledFooter>
+      <S.FooterAddress>
+        674 Gonzales Drive. Washington, PA 15301
+      </S.FooterAddress>
+    </S.Footer>
   )
 }

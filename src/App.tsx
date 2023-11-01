@@ -1,10 +1,10 @@
-import { Wrapper } from './components/styled/Wrapper.styled'
+import { Wrapper } from './components/styled/Wrapper'
 import { Header } from './layout/header/Header'
 import { Feedback } from './layout/sections/feedback/Feedback'
 import { Footer } from './layout/footer/Footer'
-import { AnchorButton } from './components/AnchorButton'
+import { GoTopBtn } from './components/goTopBtn/GoTopBtn'
 
-export const App = () => {
+export const App: React.FC = () => {
   return (
     <Wrapper>
       <Header />
@@ -12,7 +12,7 @@ export const App = () => {
         <Feedback />
       </main>
       <Footer />
-      <AnchorButton />
+      <GoTopBtn />
     </Wrapper>
   )
-}
+} 

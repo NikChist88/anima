@@ -1,65 +1,31 @@
-import { useState } from 'react'
-import { Container } from '../../components/styled/Container.styled'
+import { useEffect, useState } from 'react'
+import { Container } from '../../components/styled/Container'
 import Flex from 'styled-flex-component'
-import { StyledHeader, HeaderLink } from './Header.styled'
-import {
-  HeaderMenu,
-  HeaderMenuList,
-  HeaderMenuItem,
-  HeaderMenuLink,
-} from './headerMenu/HeaderMenu.styled'
 import { Logo } from '../../components/Logo'
-import { Icon } from '../../components/Icon'
-import { BurgerButton } from '../../components/styled/BurgerButton.styled'
+import { S } from './Header_Styles'
+import { MobileMenu } from './headerMenu/mobileMenu/MobileMenu'
+import { DesktopMenu } from './headerMenu/desktopMenu/DesktopMenu'
+import { HeaderLinks } from './headerMenu/headerLinks/HeaderLinks'
 
-export const Header = () => {
-  const [isOpenMenu, setOpenMenu] = useState(false)
+export const Header: React.FC = () => {
+  const [width, setWidth] = useState(window.innerWidth)
+  const breakpoint = 768
 
-  const toggleMenu = () => {
-    setOpenMenu(!isOpenMenu)
-  }
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleWindowResize)
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
 
   return (
-    <StyledHeader id='header'>
+    <S.Header id="header">
       <Container>
-        <Flex justifyEnd alignCenter>
-          <HeaderLink href="#">
-            <Icon iconId="wup" width="20px" height="20px" />
-          </HeaderLink>
-          <HeaderLink $phone href="tel:749925862533">
-            <Icon iconId="phone" width="20px" height="20px" />
-            +7 (499) 258-625-33
-          </HeaderLink>
-          <HeaderLink href="#">
-            <Icon iconId="search" width="20px" height="20px" />
-          </HeaderLink>
-          <BurgerButton $isOpen={isOpenMenu} onClick={toggleMenu}>
-            <span></span>
-          </BurgerButton>
-        </Flex>
+        {width > breakpoint && <HeaderLinks />}
         <Flex justifyBetween>
           <Logo />
-          <HeaderMenu>
-            <HeaderMenuList>
-              <HeaderMenuItem>
-                <HeaderMenuLink href="#">Каталог</HeaderMenuLink>
-              </HeaderMenuItem>
-              <HeaderMenuItem>
-                <HeaderMenuLink href="#">Акции</HeaderMenuLink>
-              </HeaderMenuItem>
-              <HeaderMenuItem>
-                <HeaderMenuLink href="#">Блог</HeaderMenuLink>
-              </HeaderMenuItem>
-              <HeaderMenuItem>
-                <HeaderMenuLink href="#">Сотруднечество</HeaderMenuLink>
-              </HeaderMenuItem>
-              <HeaderMenuItem>
-                <HeaderMenuLink href="#">Оплата и доставка</HeaderMenuLink>
-              </HeaderMenuItem>
-            </HeaderMenuList>
-          </HeaderMenu>
+          {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}
         </Flex>
       </Container>
-    </StyledHeader>
+    </S.Header>
   )
 }

@@ -1,40 +1,34 @@
-import { Container } from '../../../components/styled/Container.styled'
-import { StyledFeedback, FeedbackTitle, FeedbackText } from './Feedback.styled'
-import {
-  FeedbackForm,
-  FeedbackField,
-  FeedbackCheck,
-  FeedbackLabel,
-  FeedbackCheckbox,
-} from './FeedbackForm.styled'
-import { Button } from '../../../components/styled/Button.styled'
+import { Container } from '../../../components/styled/Container'
+import { S } from './Feedback_Styles'
+import { Button } from '../../../components/styled/Button'
 import Flex from 'styled-flex-component'
+import { SliderArrows } from '../../../components/sliderArrows/SliderArrows'
 
-export const Feedback = () => {
+export const Feedback: React.FC = () => {
   return (
-    <StyledFeedback>
+    <S.Feedback>
       <Container>
-        <FeedbackTitle>Остались вопросы?</FeedbackTitle>
-        <FeedbackTitle>Свяжитесь с нами, мы вам поможем!</FeedbackTitle>
-        <FeedbackText>
+        <S.FeedbackTitle>Остались вопросы?</S.FeedbackTitle>
+        <S.FeedbackTitle>Свяжитесь с нами, мы вам поможем!</S.FeedbackTitle>
+        <S.FeedbackText>
           Заполните форму и мы свяжемся с Вами в ближайшее время
-        </FeedbackText>
-        <FeedbackForm>
+        </S.FeedbackText>
+        <S.FeedbackForm>
           <Flex>
-            <FeedbackField placeholder="Ваше имя" />
-            <FeedbackField placeholder="Ваш телефон" type="tel" />
+            <S.FeedbackField placeholder="Ваше имя" />
+            <S.FeedbackField placeholder="Ваш телефон" type="tel" />
             <Button type="submit" width="240px" height="50px" color="#fff">
               Отправить
             </Button>
           </Flex>
-          <FeedbackCheck>
-            <FeedbackCheckbox id="check" type="checkbox" />
-            <FeedbackLabel htmlFor="check">
+          <S.FeedbackCheck>
+            <S.FeedbackCheckbox id="check" type="checkbox" />
+            <S.FeedbackLabel htmlFor="check">
               Согласен на обработку <a href="#">персональных данных</a>
-            </FeedbackLabel>
-          </FeedbackCheck>
-        </FeedbackForm>
+            </S.FeedbackLabel>
+          </S.FeedbackCheck>
+        </S.FeedbackForm>
       </Container>
-    </StyledFeedback>
+    </S.Feedback>
   )
 }
