@@ -16,18 +16,18 @@ const SliderArrow = styled.button`
   justify-content: center;
   width: 45px;
   height: 45px;
-  border-radius: 4px;
-  border: 1px solid #e5e5e5;
-  background-color: #f9f9f9;
-  transition: background-color ease-in 0.3s;
+  border: 0.5px solid #ffffff;
+  background-color: transparent;
+  transition: background-color ease-in 0.3s, border-color ease-in 0.3s;
   cursor: pointer;
 
   svg {
-    color: #b1b1b1;
+    color: #ffffff;
   }
 
   &:hover {
-    background-color: #e5e5e5;
+    border-color: transparent;
+    background-color: #28553f;
   }
 `
 

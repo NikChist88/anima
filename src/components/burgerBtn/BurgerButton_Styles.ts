@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const BurgerButton = styled.button<{ isOpen?: boolean }>`
+export const BurgerButton = styled.button<{ $isopen?: boolean }>`
   display: none;
 
   @media (max-width: 768px) {
@@ -36,9 +36,9 @@ export const BurgerButton = styled.button<{ isOpen?: boolean }>`
       top: calc(50% - 1px);
     }
 
-    ${({ isOpen }) =>
-      isOpen &&
-      css`
+    ${({ $isopen }) =>
+      $isopen &&
+      css<{ $isopen?: boolean }>`
         span {
           width: 0;
         }

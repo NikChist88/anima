@@ -3,14 +3,14 @@ import { headerMenuItems } from "../../../data/data"
 
 export const Menu: React.FC = () => {
   return (
-    <S.HeaderMenuList>
+    <ul>
       {headerMenuItems.map((item) => {
         return (
-          <S.HeaderMenuItem key={item.id}>
-            <S.HeaderMenuLink href={item.href}>{item.title}</S.HeaderMenuLink>
-          </S.HeaderMenuItem>
+          <S.MenuItem key={item.id}>
+            <S.MenuLink href={item.href}>{item.title}</S.MenuLink>
+          </S.MenuItem>
         )
       })}
-    </S.HeaderMenuList>
+    </ul>
   )
 }

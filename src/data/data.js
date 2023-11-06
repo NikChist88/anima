@@ -131,7 +131,7 @@ export const socials = [
     width: '16px',
     height: '16px',
     href: '#',
-    label: 'Facebook social network'
+    label: 'Facebook social network',
   },
   {
     id: 2,
@@ -139,7 +139,7 @@ export const socials = [
     width: '16px',
     height: '16px',
     href: '#',
-    label: 'Instagram social network'
+    label: 'Instagram social network',
   },
   {
     id: 3,
@@ -147,7 +147,7 @@ export const socials = [
     width: '16px',
     height: '16px',
     href: '#',
-    label: 'Telegram messenger'
+    label: 'Telegram messenger',
   },
   {
     id: 4,
@@ -155,7 +155,7 @@ export const socials = [
     width: '16px',
     height: '16px',
     href: '#',
-    label: 'Youtube video hosting'
+    label: 'Youtube video hosting',
   },
   {
     id: 5,
@@ -163,6 +163,6 @@ export const socials = [
     width: '16px',
     height: '16px',
     href: '#',
-    label: 'Pinterest - social Internet service, photo hosting,'
+    label: 'Pinterest - social Internet service, photo hosting,',
   },
 ]

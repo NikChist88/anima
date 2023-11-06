@@ -6,18 +6,25 @@ import { HeaderLinks } from '../headerLinks/HeaderLinks'
 import Flex from 'styled-flex-component'
 
 export const MobileMenu: React.FC = () => {
-  const [isOpenMenu, setOpenMenu] = useState(false)
+  const [openMenu, setOpenMenu] = useState(false)
 
   const toggleMenu = () => {
-    setOpenMenu(!isOpenMenu)
+    setOpenMenu(!openMenu)
   }
 
   return (
     <S.MobileMenu>
-      <Menu />
+      <S.MobileMenuBody
+        $isopen={openMenu}
+        onClick={() => {
+          setOpenMenu(false)
+        }}
+      >
+        <Menu />
+      </S.MobileMenuBody>
       <Flex alignCenter>
         <HeaderLinks />
-        <BurgerButton isOpen={isOpenMenu} onClick={toggleMenu} />
+        <BurgerButton $isopen={openMenu} onClick={toggleMenu} />
       </Flex>
     </S.MobileMenu>
   )

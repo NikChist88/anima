@@ -2,7 +2,6 @@ import { Container } from '../../../components/styled/Container'
 import { S } from './Feedback_Styles'
 import { Button } from '../../../components/styled/Button'
 import Flex from 'styled-flex-component'
-import { SliderArrows } from '../../../components/sliderArrows/SliderArrows'
 
 export const Feedback: React.FC = () => {
   return (

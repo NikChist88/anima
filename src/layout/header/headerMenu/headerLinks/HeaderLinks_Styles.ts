@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const HeaderLinksBody = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const HeaderLink = styled.a`
   }
 
   &:hover {
-    color: rgba(255, 255, 255, 0.6);
+    color: #28553f;
   }
 
   @media screen and (max-width: 576px) {

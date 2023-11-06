@@ -4,9 +4,11 @@ type ButtonPropsType = {
   width?: string
   height?: string
   color?: string
+  hover?: string
 }
 
 export const Button = styled.button<ButtonPropsType>`
+  font-family: 'Raleway';
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +24,6 @@ export const Button = styled.button<ButtonPropsType>`
   background-color: ${({ color }) => color || '#28553f'};
 
   &:hover {
-    background-color: #438f6a;
+    background-color: ${({ hover }) => hover || '#173125'};
   }
 `
